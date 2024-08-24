@@ -1,0 +1,3 @@
+class Routes {}
+
+class RouteName {}

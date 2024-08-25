@@ -14,7 +14,26 @@ class AppTheme {
       primaryColorDark: _primaryColorDark,
       primaryColor: _primaryColorDark,
       primaryColorLight: _primaryColorDark,
-      colorScheme: const ColorScheme.dark().copyWith()
+      colorScheme: const ColorScheme.dark().copyWith(
+        primary: _primaryColorDark,
+        secondary: _secondaryColorDark,
+      ),
+      // Allow developers flexibility in text theme colors and font weights to suit specific UI details.
+      textTheme: TextTheme(
+        titleLarge: TextStyle(
+            fontFamily: GoogleFonts.roboto().fontFamily,
+            fontSize: 30.sp,
+            fontWeight: FontWeight.w500,
+            color: _secondaryColorDark),
+        titleMedium: TextStyle(
+            fontFamily: GoogleFonts.roboto().fontFamily,
+            fontSize: 24.sp,
+            fontWeight: FontWeight.w600),
+        titleSmall: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600),
+        bodyLarge: TextStyle(fontSize: 14.sp),
+        bodyMedium: TextStyle(fontSize: 12.sp),
+        bodySmall: TextStyle(fontSize: 10.sp),
+      ),
     );
   }
 }

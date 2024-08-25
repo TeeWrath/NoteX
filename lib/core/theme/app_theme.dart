@@ -9,7 +9,7 @@ class AppTheme {
   static const Color _secondaryColorDark = Color.fromARGB(255, 255, 210, 42);
 
   static ThemeData dark() {
-    return ThemeData().copyWith(
+    return ThemeData(fontFamily: GoogleFonts.roboto().fontFamily).copyWith(
       scaffoldBackgroundColor: _scaffoldColorDark,
       primaryColorDark: _primaryColorDark,
       primaryColor: _primaryColorDark,
@@ -19,20 +19,16 @@ class AppTheme {
         secondary: _secondaryColorDark,
       ),
       // Allow developers flexibility in text theme colors and font weights to suit specific UI details.
-      textTheme: TextTheme(
+      textTheme: const TextTheme(
         titleLarge: TextStyle(
-            fontFamily: GoogleFonts.roboto().fontFamily,
-            fontSize: 30.sp,
+            fontSize: 30,
             fontWeight: FontWeight.w500,
             color: _secondaryColorDark),
-        titleMedium: TextStyle(
-            fontFamily: GoogleFonts.roboto().fontFamily,
-            fontSize: 24.sp,
-            fontWeight: FontWeight.w600),
-        titleSmall: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600),
-        bodyLarge: TextStyle(fontSize: 14.sp),
-        bodyMedium: TextStyle(fontSize: 12.sp),
-        bodySmall: TextStyle(fontSize: 10.sp),
+        titleMedium: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+        titleSmall: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+        bodyLarge: TextStyle(fontSize: 14),
+        bodyMedium: TextStyle(fontSize: 12),
+        bodySmall: TextStyle(fontSize: 10),
       ),
     );
   }

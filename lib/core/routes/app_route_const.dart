@@ -1,3 +1,7 @@
-class Routes {}
+class Routes {
+  static const String hackathons = '/';
+}
 
-class RouteName {}
+class RouteName {
+  static const String hackathons = 'hackathons';
+}

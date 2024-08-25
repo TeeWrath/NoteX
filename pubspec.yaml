@@ -40,6 +40,8 @@ dependencies:
   go_router: ^14.2.7
   get_it: ^7.7.0
   google_fonts: ^6.2.1
+  image_picker: ^1.1.2
+  file_picker: ^8.1.2
 
 dev_dependencies:
   flutter_test:

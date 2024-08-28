@@ -47,7 +47,7 @@ class CommonScaffold extends StatelessWidget {
                   ],
                 )
               : null,
-          bottomNavigationBar: const BottomNavBar(),
+          bottomNavigationBar: BottomNavBar(),
         );
       },
     );

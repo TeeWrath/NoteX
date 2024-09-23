@@ -1,0 +1,55 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:notex/core/theme/app_theme.dart';
+import 'package:notex/core/widgets/auth_button.dart';
+
+class Splash extends StatelessWidget {
+  const Splash({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: AppTheme.dark().colorScheme.secondary,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Image.asset(
+            'assets/logo.png',
+            width: 300.w,
+          ),
+          Text(
+            'Notex',
+            style: AppTheme.dark().textTheme.titleLarge!.copyWith(
+                color: Colors.black,
+                fontSize: 130.sp,
+                fontWeight: FontWeight.w800),
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
+          Text(
+            'Share notes, connect with people, crack university examinations',
+            textAlign: TextAlign.center,
+            style: AppTheme.dark()
+                .textTheme
+                .bodyLarge!
+                .copyWith(color: Colors.black, fontWeight: FontWeight.w600),
+          ),
+          SizedBox(
+            height: 20.h,
+          ),
+          AuthButton(
+              onPressed: () {},
+              child: Text(
+                'Shall We?',
+                style: AppTheme.dark()
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(color: Colors.white, fontWeight: FontWeight.w500),
+              ))
+        ],
+      ),
+    );
+  }
+}

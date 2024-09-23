@@ -9,8 +9,10 @@ class CommonScaffold extends StatelessWidget {
   const CommonScaffold(
       {super.key,
       required this.enableAppBar,
+      required this.body,
       this.suffixIcon = Icons.search_outlined});
   final bool enableAppBar;
+  final Widget body;
   final IconData suffixIcon;
 
   @override
@@ -48,6 +50,7 @@ class CommonScaffold extends StatelessWidget {
                 )
               : null,
           bottomNavigationBar: BottomNavBar(),
+          body: body,
         );
       },
     );

@@ -6,6 +6,11 @@ class HackathonsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CommonScaffold(enableAppBar: true,);
+    return const CommonScaffold(
+      enableAppBar: true,
+      body: Center(
+        child: Text('Hello'),
+      ),
+    );
   }
 }

@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notex/core/routes/app_route_config.dart';
 import 'package:notex/core/theme/app_theme.dart';
@@ -26,11 +28,27 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(844, 390),
       minTextAdapt: true,
-      child: MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        theme: AppTheme.dark(),
-        routerConfig: AppRouteConfig.returnRouter(),
-      ),
+      child: PlatformProvider(
+          builder: (context) => PlatformTheme(
+                materialDarkTheme: AppTheme.dark(),
+                cupertinoDarkTheme: AppTheme.cupDark(),
+                builder: (context) => PlatformApp.router(
+                  localizationsDelegates: const <LocalizationsDelegate<
+                      dynamic>>[
+                    DefaultMaterialLocalizations.delegate,
+                    DefaultCupertinoLocalizations.delegate,
+                    DefaultWidgetsLocalizations.delegate
+                  ],
+                  debugShowCheckedModeBanner: false,
+                  routerConfig: AppRouteConfig.returnRouter(),
+                ),
+              )),
     );
   }
 }
+
+// MaterialApp.router(
+//         debugShowCheckedModeBanner: false,
+//         theme: AppTheme.dark(),
+//         routerConfig: AppRouteConfig.returnRouter(),
+//       )

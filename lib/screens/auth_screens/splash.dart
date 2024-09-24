@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:notex/core/routes/app_route_const.dart';
 import 'package:notex/core/theme/app_theme.dart';
 import 'package:notex/core/widgets/auth_button.dart';
 
@@ -40,7 +42,9 @@ class Splash extends StatelessWidget {
             height: 20.h,
           ),
           AuthButton(
-              onPressed: () {},
+              onPressed: () {
+                context.go(Routes.enterDetails);
+              },
               child: Text(
                 'Shall We?',
                 style: AppTheme.dark()

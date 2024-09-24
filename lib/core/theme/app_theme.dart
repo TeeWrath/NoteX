@@ -1,8 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  // Dark Mode
+  // Dark Mode - Android
   static const Color _scaffoldColorDark = Color.fromARGB(255, 26, 31, 37);
   static const Color _primaryColorDark = Color.fromARGB(255, 38, 45, 53);
   static const Color _secondaryColorDark = Color.fromARGB(255, 255, 210, 42);
@@ -30,5 +31,15 @@ class AppTheme {
         bodySmall: TextStyle(fontSize: 10),
       ),
     );
+  }
+
+  // Dark Mode - IOS and MacOs
+  static CupertinoThemeData cupDark() {
+    return CupertinoThemeData(
+        primaryColor: _primaryColorDark,
+        applyThemeToAll: true,
+        scaffoldBackgroundColor: _scaffoldColorDark,
+        primaryContrastingColor: _secondaryColorDark,
+        textTheme: CupertinoTextThemeData(textStyle: GoogleFonts.roboto()));
   }
 }

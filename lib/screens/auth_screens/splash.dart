@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:notex/core/routes/app_route_const.dart';
@@ -20,7 +21,7 @@ class Splash extends StatelessWidget {
             'assets/logo.png',
             width: 300.w,
           ),
-          Text(
+          PlatformText(
             'Notex',
             style: AppTheme.dark().textTheme.titleLarge!.copyWith(
                 color: Colors.black,
@@ -30,7 +31,7 @@ class Splash extends StatelessWidget {
           SizedBox(
             height: 10.h,
           ),
-          Text(
+          PlatformText(
             'Share notes, connect with people, crack university examinations',
             textAlign: TextAlign.center,
             style: AppTheme.dark()

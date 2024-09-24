@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notex/core/routes/app_route_config.dart';
 import 'package:notex/core/theme/app_theme.dart';
 import 'package:notex/locator.dart';
+import 'package:notex/providers/auth_provider.dart';
 import 'package:notex/providers/bottom_bar_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -14,6 +15,9 @@ void main() async {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => locator<BottomBarProvider>()),
+      ChangeNotifierProvider(
+        create: (_) => locator<AuthProvider>(),
+      )
     ],
     child: const MyApp(),
   ));

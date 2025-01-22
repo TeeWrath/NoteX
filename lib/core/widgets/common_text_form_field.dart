@@ -14,7 +14,10 @@ class CommonTextFormField extends StatelessWidget {
       this.style,
       this.suffixIcon,
       this.width,
-      this.height});
+      this.height,
+      this.textAlign,
+      this.textAlignVertical = TextAlignVertical.center,
+      this.boxDecPadding});
   final TextEditingController controller;
   final String hintText;
   final TextInputType? keyboardType;
@@ -24,6 +27,9 @@ class CommonTextFormField extends StatelessWidget {
   final Widget? suffixIcon;
   final double? width;
   final double? height;
+  final TextAlign? textAlign;
+  final TextAlignVertical textAlignVertical;
+  final EdgeInsets? boxDecPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +39,7 @@ class CommonTextFormField extends StatelessWidget {
       decoration: BoxDecoration(
           color: AppTheme.dark().primaryColor,
           borderRadius: BorderRadius.circular(80.r)),
+          padding: boxDecPadding,
       child: PlatformTextFormField(
           controller: controller,
           autocorrect: true,
@@ -50,6 +57,8 @@ class CommonTextFormField extends StatelessWidget {
                 obscureText: obscureText,
                 onChanged: onChanged,
                 style: style,
+                textAlignVertical: textAlignVertical,
+                textAlign: textAlign,
               )),
     );
   }

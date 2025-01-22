@@ -14,28 +14,31 @@ class EnterDetails extends StatelessWidget {
     return Consumer<AuthProvider>(
       builder: (context, provider, child) => Scaffold(
         backgroundColor: AppTheme.dark().colorScheme.secondary,
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Image.asset(
-              'assets/logo.png',
-              width: 300.w,
-            ),
-            PlatformText(
-              'Name',
-              textAlign: TextAlign.left,
-              style: AppTheme.dark()
-                  .textTheme
-                  .titleLarge!
-                  .copyWith(fontWeight: FontWeight.w600, color: Colors.black),
-            ),
-            CommonTextFormField(
-              width: 700.w,
-              height: 30.h,
-                              controller: provider.nameEditingController,
-                hintText: 'Enter your name')
-          ],
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset(
+                'assets/logo.png',
+                width: 300.w,
+              ),
+              PlatformText(
+                'Name',
+                textAlign: TextAlign.left,
+                style: AppTheme.dark()
+                    .textTheme
+                    .titleLarge!
+                    .copyWith(fontWeight: FontWeight.w600, color: Colors.black),
+              ),
+              CommonTextFormField(
+                  width: 700.w,
+                  height: 30.h,
+                  controller: provider.nameEditingController,
+                  style: AppTheme.dark().textTheme.titleSmall!.copyWith(),
+                  hintText: 'Enter your name')
+            ],
+          ),
         ),
       ),
     );

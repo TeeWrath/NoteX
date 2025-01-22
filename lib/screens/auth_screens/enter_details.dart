@@ -5,9 +5,9 @@ import 'package:go_router/go_router.dart';
 import 'package:notex/core/routes/app_route_const.dart';
 import 'package:notex/core/theme/app_theme.dart';
 import 'package:notex/core/theme/colors.dart';
-import 'package:notex/core/widgets/auth_button.dart';
-import 'package:notex/core/widgets/common_text_form_field.dart';
-import 'package:notex/core/widgets/dropdownbutton.dart';
+import 'package:notex/core/widgets/buttons/auth_button.dart';
+import 'package:notex/core/widgets/text_fields/common_text_form_field.dart';
+import 'package:notex/core/widgets/buttons/dropdownbutton.dart';
 import 'package:notex/providers/auth_provider.dart';
 import 'package:provider/provider.dart';
 

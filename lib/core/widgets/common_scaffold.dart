@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:notex/core/theme/app_theme.dart';
 import 'package:notex/core/widgets/bottom_nav_bar.dart';
-import 'package:notex/core/widgets/search_text_field.dart';
+import 'package:notex/core/widgets/text_fields/search_text_field.dart';
 import 'package:provider/provider.dart';
 
 class CommonScaffold extends StatelessWidget {
@@ -25,7 +26,9 @@ class CommonScaffold extends StatelessWidget {
               ? AppBar(
                   backgroundColor: AppTheme.dark().scaffoldBackgroundColor,
                   leading: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.pop();
+                      },
                       icon: Icon(
                         Icons.arrow_back_rounded,
                         color: AppTheme.dark().colorScheme.secondary,

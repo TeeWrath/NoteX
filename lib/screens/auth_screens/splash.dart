@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:notex/core/routes/app_route_const.dart';
 import 'package:notex/core/theme/app_theme.dart';
-import 'package:notex/core/widgets/auth_button.dart';
+import 'package:notex/core/widgets/buttons/auth_button.dart';
 
 class Splash extends StatelessWidget {
   const Splash({super.key});

@@ -9,7 +9,7 @@ class AppTheme {
   static const Color _secondaryColorDark = Color.fromARGB(255, 255, 210, 42);
 
   static ThemeData dark() {
-    return ThemeData(fontFamily: GoogleFonts.roboto().fontFamily).copyWith(
+    return ThemeData(fontFamily: GoogleFonts.manrope().fontFamily).copyWith(
       scaffoldBackgroundColor: _scaffoldColorDark,
       primaryColorDark: _primaryColorDark,
       primaryColor: _primaryColorDark,

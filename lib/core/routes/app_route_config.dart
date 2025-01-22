@@ -4,6 +4,7 @@ import 'package:notex/core/routes/app_route_const.dart';
 import 'package:notex/screens/auth_screens/enter_details.dart';
 import 'package:notex/screens/auth_screens/splash.dart';
 import 'package:notex/screens/hackathons/hackathons.dart';
+import 'package:notex/screens/home/home.dart';
 
 class AppRouteConfig {
   static GoRouter returnRouter() {
@@ -20,6 +21,13 @@ class AppRouteConfig {
         path: Routes.enterDetails,
         pageBuilder: (context, state) {
           return const MaterialPage(child: EnterDetails());
+        },
+      ),
+      GoRoute(
+        name: RouteName.homeScreen,
+        path: Routes.homeScreen,
+        pageBuilder: (context, state) {
+          return const MaterialPage(child: HomeScreen());
         },
       ),
       GoRoute(

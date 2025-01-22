@@ -1,59 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notex/core/theme/app_theme.dart';
+import 'package:notex/core/theme/colors.dart';
 
 class DropDownbutton extends StatelessWidget {
-  const DropDownbutton({
-    super.key,
-    this.hintWidget,
-    this.style,
-    this.isExpanded = false,
-    this.padding,
-  });
+  const DropDownbutton(
+      {super.key,
+      this.hintWidget,
+      this.style,
+      this.isExpanded = false,
+      this.padding,
+      this.margin,
+      this.menuWidth,
+      this.icon,
+      this.items});
 
   final Widget? hintWidget;
   final TextStyle? style;
   final bool isExpanded;
   final EdgeInsets? padding;
+  final EdgeInsets? margin;
+  final double? menuWidth;
+  final Widget? icon;
+  final List<DropdownMenuItem<Object>>? items;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: margin,
       padding: padding ?? const EdgeInsets.symmetric(horizontal: 16.0),
       decoration: BoxDecoration(
         color: AppTheme.dark().colorScheme.primary,
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(90.r),
       ),
       child: DropdownButtonHideUnderline(
         child: DropdownButton(
-          hint: hintWidget 
-            // Text(
-            //   "Choose your branch",
-            //   style: style ?? 
-            //     const TextStyle(color: Colors.white),
-            // ),
-            ,
+          hint: hintWidget,
           isExpanded: isExpanded,
           focusColor: AppTheme.dark().primaryColor,
           style: style ??
-              TextStyle(
+              const TextStyle(
                 fontSize: 16,
                 color: Colors.white,
               ),
-          items: const [
-            DropdownMenuItem(
-              value: "branch1",
-              child: Text("Branch 1"),
-            ),
-            DropdownMenuItem(
-              value: "branch2",
-              child: Text("Branch 2"),
-            ),
-          ],
+          items: items,
           dropdownColor: AppTheme.dark().primaryColor,
-          icon: Icon(
-            Icons.keyboard_arrow_down_rounded,
-            color: AppTheme.dark().colorScheme.secondary,
-          ),
+          borderRadius: BorderRadius.circular(90.r),
+          // alignment: Alignment.center,
+          menuWidth: menuWidth,
+          icon: icon,
           onChanged: (value) {
             // Handle value change
           },

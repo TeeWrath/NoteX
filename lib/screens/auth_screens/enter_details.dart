@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:notex/core/routes/app_route_const.dart';
 import 'package:notex/core/theme/app_theme.dart';
+import 'package:notex/core/theme/colors.dart';
+import 'package:notex/core/widgets/auth_button.dart';
 import 'package:notex/core/widgets/common_text_form_field.dart';
 import 'package:notex/core/widgets/dropdownbutton.dart';
 import 'package:notex/providers/auth_provider.dart';
@@ -74,17 +78,163 @@ class EnterDetails extends StatelessWidget {
               ),
               DropDownbutton(
                 isExpanded: true,
-                padding: EdgeInsets.fromLTRB(10.w, 5.h, 10.w, 5.h),
+                icon: Icon(
+                  Icons.keyboard_arrow_down_rounded,
+                  color: AppTheme.dark().colorScheme.secondary,
+                ),
+                menuWidth: 700.w,
+                margin: EdgeInsets.fromLTRB(70.w, 0, 70.w, 0),
+                padding: EdgeInsets.fromLTRB(50.w, 5.h, 10.w, 5.h),
                 hintWidget: Text(
                   'Choose your branch',
-                  style: AppTheme.dark().textTheme.titleSmall!.copyWith(
-                      color: const Color.fromARGB(255, 152, 152, 152)),
+                  style: AppTheme.dark()
+                      .textTheme
+                      .titleSmall!
+                      .copyWith(color: dropDownMenuText),
                 ),
                 style: AppTheme.dark()
                     .textTheme
-                    .titleSmall!
+                    .bodyLarge!
                     .copyWith(color: Colors.white),
+                items: [
+                  DropdownMenuItem(
+                    value: "cse",
+                    child: Text(
+                      "Computer Science",
+                      style: AppTheme.dark()
+                          .textTheme
+                          .titleSmall!
+                          .copyWith(color: dropDownMenuText),
+                    ),
+                  ),
+                  DropdownMenuItem(
+                    value: "ece",
+                    child: Text("Electronics and Communications",
+                        style: AppTheme.dark()
+                            .textTheme
+                            .titleSmall!
+                            .copyWith(color: dropDownMenuText)),
+                  ),
+                ],
               ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 75.w),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: PlatformText(
+                    'Semester',
+                    textAlign: TextAlign.start,
+                    style: AppTheme.dark().textTheme.titleLarge!.copyWith(
+                        fontWeight: FontWeight.w600, color: Colors.black),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 2.h,
+              ),
+              DropDownbutton(
+                isExpanded: true,
+                icon: Icon(
+                  Icons.keyboard_arrow_down_rounded,
+                  color: AppTheme.dark().colorScheme.secondary,
+                ),
+                menuWidth: 700.w,
+                margin: EdgeInsets.fromLTRB(70.w, 0, 70.w, 0),
+                padding: EdgeInsets.fromLTRB(50.w, 5.h, 10.w, 5.h),
+                hintWidget: Text(
+                  'Choose your semester',
+                  style: AppTheme.dark()
+                      .textTheme
+                      .titleSmall!
+                      .copyWith(color: dropDownMenuText),
+                ),
+                style: AppTheme.dark()
+                    .textTheme
+                    .bodyLarge!
+                    .copyWith(color: Colors.white),
+                items: [
+                  DropdownMenuItem(
+                    value: "1",
+                    child: Text(
+                      "First Semester",
+                      style: AppTheme.dark()
+                          .textTheme
+                          .titleSmall!
+                          .copyWith(color: dropDownMenuText),
+                    ),
+                  ),
+                  DropdownMenuItem(
+                    value: "2",
+                    child: Text("First Semester",
+                        style: AppTheme.dark()
+                            .textTheme
+                            .titleSmall!
+                            .copyWith(color: dropDownMenuText)),
+                  ),
+                  DropdownMenuItem(
+                    value: "3",
+                    child: Text("Third Semester",
+                        style: AppTheme.dark()
+                            .textTheme
+                            .titleSmall!
+                            .copyWith(color: dropDownMenuText)),
+                  ),
+                  DropdownMenuItem(
+                    value: "4",
+                    child: Text("Fourth Semester",
+                        style: AppTheme.dark()
+                            .textTheme
+                            .titleSmall!
+                            .copyWith(color: dropDownMenuText)),
+                  ),
+                  DropdownMenuItem(
+                    value: "5",
+                    child: Text("Fifth Semester",
+                        style: AppTheme.dark()
+                            .textTheme
+                            .titleSmall!
+                            .copyWith(color: dropDownMenuText)),
+                  ),
+                  DropdownMenuItem(
+                    value: "6",
+                    child: Text("Sixth Semester",
+                        style: AppTheme.dark()
+                            .textTheme
+                            .titleSmall!
+                            .copyWith(color: dropDownMenuText)),
+                  ),
+                  DropdownMenuItem(
+                    value: "7",
+                    child: Text("Seventh Semester",
+                        style: AppTheme.dark()
+                            .textTheme
+                            .titleSmall!
+                            .copyWith(color: dropDownMenuText)),
+                  ),
+                  DropdownMenuItem(
+                    value: "8",
+                    child: Text("Eighth Semester",
+                        style: AppTheme.dark()
+                            .textTheme
+                            .titleSmall!
+                            .copyWith(color: dropDownMenuText)),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              AuthButton(
+                  child: Text(
+                    'Take the leap!!',
+                    style: AppTheme.dark().textTheme.titleMedium!.copyWith(),
+                  ),
+                  onPressed: () {
+                    context.go(Routes.hackathons);
+                  })
             ],
           ),
         ),

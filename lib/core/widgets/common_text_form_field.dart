@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notex/core/theme/app_theme.dart';
+import 'package:notex/core/theme/colors.dart';
 
 class CommonTextFormField extends StatelessWidget {
   const CommonTextFormField(
@@ -52,7 +53,7 @@ class CommonTextFormField extends StatelessWidget {
                     suffixIcon: suffixIcon,
                     hintStyle: AppTheme.dark().textTheme.titleSmall!.copyWith(
                         fontWeight: FontWeight.w500,
-                        color: const Color.fromARGB(255, 152, 152, 152))),
+                        color: dropDownMenuText)),
                 keyboardType: keyboardType,
                 obscureText: obscureText,
                 onChanged: onChanged,

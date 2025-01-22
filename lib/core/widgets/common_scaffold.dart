@@ -11,10 +11,12 @@ class CommonScaffold extends StatelessWidget {
       {super.key,
       required this.enableAppBar,
       required this.body,
-      this.suffixIcon = Icons.search_outlined});
+      this.suffixIcon = Icons.search_outlined,
+      this.searchHintText});
   final bool enableAppBar;
   final Widget body;
   final IconData suffixIcon;
+  final String? searchHintText;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,7 @@ class CommonScaffold extends StatelessWidget {
                       enableAppBar ? suffixIcon : null,
                       color: AppTheme.dark().colorScheme.secondary,
                     ),
-                    hintText: 'Search your hackathons',
+                    hintText: searchHintText ?? 'Search your hackathons',
                   ),
                   centerTitle: true,
                   actions: [

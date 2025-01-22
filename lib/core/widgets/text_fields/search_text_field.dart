@@ -4,7 +4,8 @@ import 'package:notex/core/theme/app_theme.dart';
 import 'package:notex/core/theme/colors.dart';
 
 class SearchTextField extends StatelessWidget {
-  const SearchTextField({super.key,required this.hintText ,required this.suffixWidget});
+  const SearchTextField(
+      {super.key, required this.hintText, required this.suffixWidget});
   final Widget suffixWidget;
   final String hintText;
 
@@ -16,12 +17,19 @@ class SearchTextField extends StatelessWidget {
           borderRadius: BorderRadius.circular(50.r)),
       child: TextField(
         textAlignVertical: TextAlignVertical.center,
+        style: AppTheme.dark()
+            .textTheme
+            .titleSmall!
+            .copyWith(color: Colors.white, fontWeight: FontWeight.w200),
         decoration: InputDecoration(
-          suffixIcon: IconButton(
-              onPressed: () {},
-              icon: suffixWidget),
+          // fillColor: Colors.white,
+          suffixIcon: IconButton(onPressed: () {}, icon: suffixWidget),
           contentPadding: EdgeInsets.symmetric(horizontal: 40.w),
           border: InputBorder.none,
+          labelStyle: AppTheme.dark()
+              .textTheme
+              .titleMedium!
+              .copyWith(color: Colors.white),
           hintStyle: AppTheme.dark()
               .textTheme
               .bodyLarge!

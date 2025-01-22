@@ -1,8 +1,8 @@
 class Routes {
   static const String splashScreen = '/splash';
   static const String enterDetails = '/enter-details';
-  static const String homeScreen = '/';
-  static const String hackathons = '/hackathons';
+  static const String homeScreen = '/home';
+  static const String hackathons = '/';
 }
 
 class RouteName {

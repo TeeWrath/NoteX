@@ -233,7 +233,7 @@ class EnterDetails extends StatelessWidget {
                     style: AppTheme.dark().textTheme.titleMedium!.copyWith(),
                   ),
                   onPressed: () {
-                    context.go(Routes.hackathons);
+                    context.go(Routes.homeScreen);
                   })
             ],
           ),

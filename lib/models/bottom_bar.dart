@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:notex/core/routes/app_route_const.dart';
 import 'package:notex/core/theme/app_theme.dart';
 
 class BottomBar {
@@ -25,5 +26,13 @@ class BottomBar {
       backgroundColor: AppTheme.dark().colorScheme.secondary,
       child: Image.asset('assets/catpfp.png'),
     )
+  ];
+
+  final bottomBarRoutes = [
+    Routes.homeScreen,
+    Routes.homeScreen,
+    Routes.hackathons,
+    Routes.homeScreen,
+    Routes.homeScreen
   ];
 }

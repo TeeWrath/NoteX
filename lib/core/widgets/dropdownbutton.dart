@@ -45,7 +45,7 @@ class DropDownbutton extends StatelessWidget {
               ),
           items: items,
           dropdownColor: AppTheme.dark().primaryColor,
-          borderRadius: BorderRadius.circular(90.r),
+          borderRadius: BorderRadius.circular(80.r),
           // alignment: Alignment.center,
           menuWidth: menuWidth,
           icon: icon,

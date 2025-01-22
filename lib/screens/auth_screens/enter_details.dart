@@ -26,30 +26,30 @@ class EnterDetails extends StatelessWidget {
             children: [
               Image.asset(
                 'assets/logo.png',
-                width: 300.w,
+                width: 200.w,
               ),
               SizedBox(
                 height: 10.h,
               ),
               Padding(
-                padding: EdgeInsets.only(left: 75.w),
+                padding: EdgeInsets.only(left: 100.w),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: PlatformText(
                     'Name',
                     textAlign: TextAlign.start,
-                    style: AppTheme.dark().textTheme.titleLarge!.copyWith(
+                    style: AppTheme.dark().textTheme.titleMedium!.copyWith(
                         fontWeight: FontWeight.w600, color: Colors.black),
                   ),
                 ),
               ),
-              SizedBox(
-                height: 2.h,
-              ),
+              // SizedBox(
+              //   height: 2.h,
+              // ),
               CommonTextFormField(
-                  width: 700.w,
-                  height: 30.h,
-                  boxDecPadding: EdgeInsets.fromLTRB(50.w, 2.h, 0, 0),
+                  width: 660.w,
+                  height: 25.h,
+                  boxDecPadding: EdgeInsets.fromLTRB(50.w, 0, 0, 0),
                   textAlign: TextAlign.left,
                   textAlignVertical: TextAlignVertical.center,
                   controller: provider.nameEditingController,
@@ -62,29 +62,29 @@ class EnterDetails extends StatelessWidget {
                 height: 10.h,
               ),
               Padding(
-                padding: EdgeInsets.only(left: 75.w),
+                padding: EdgeInsets.only(left: 100.w),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: PlatformText(
                     'Branch',
                     textAlign: TextAlign.start,
-                    style: AppTheme.dark().textTheme.titleLarge!.copyWith(
+                    style: AppTheme.dark().textTheme.titleMedium!.copyWith(
                         fontWeight: FontWeight.w600, color: Colors.black),
                   ),
                 ),
               ),
-              SizedBox(
-                height: 2.h,
-              ),
+              // SizedBox(
+              //   height: 2.h,
+              // ),
               DropDownbutton(
                 isExpanded: true,
                 icon: Icon(
                   Icons.keyboard_arrow_down_rounded,
                   color: AppTheme.dark().colorScheme.secondary,
                 ),
-                menuWidth: 700.w,
-                margin: EdgeInsets.fromLTRB(70.w, 0, 70.w, 0),
-                padding: EdgeInsets.fromLTRB(50.w, 5.h, 10.w, 5.h),
+                menuWidth: 650.w,
+                margin: EdgeInsets.fromLTRB(90.w, 0, 90.w, 0),
+                padding: EdgeInsets.fromLTRB(50.w, 1.h, 10.w, 1.h),
                 hintWidget: Text(
                   'Choose your branch',
                   style: AppTheme.dark()
@@ -121,29 +121,29 @@ class EnterDetails extends StatelessWidget {
                 height: 10.h,
               ),
               Padding(
-                padding: EdgeInsets.only(left: 75.w),
+                padding: EdgeInsets.only(left: 100.w),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: PlatformText(
                     'Semester',
                     textAlign: TextAlign.start,
-                    style: AppTheme.dark().textTheme.titleLarge!.copyWith(
+                    style: AppTheme.dark().textTheme.titleMedium!.copyWith(
                         fontWeight: FontWeight.w600, color: Colors.black),
                   ),
                 ),
               ),
-              SizedBox(
-                height: 2.h,
-              ),
+              // SizedBox(
+              //   height: 0.h,
+              // ),
               DropDownbutton(
                 isExpanded: true,
                 icon: Icon(
                   Icons.keyboard_arrow_down_rounded,
                   color: AppTheme.dark().colorScheme.secondary,
                 ),
-                menuWidth: 700.w,
-                margin: EdgeInsets.fromLTRB(70.w, 0, 70.w, 0),
-                padding: EdgeInsets.fromLTRB(50.w, 5.h, 10.w, 5.h),
+                menuWidth: 650.w,
+                margin: EdgeInsets.fromLTRB(90.w, 0, 90.w, 0),
+                padding: EdgeInsets.fromLTRB(50.w, 1.h, 10.w, 1.h),
                 hintWidget: Text(
                   'Choose your semester',
                   style: AppTheme.dark()

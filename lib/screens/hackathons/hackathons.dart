@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notex/core/theme/app_theme.dart';
 import 'package:notex/core/widgets/common_scaffold.dart';
-import 'package:notex/core/widgets/hackathon_card.dart';
+import 'package:notex/core/widgets/cards/hackathon_card.dart';
 
 class HackathonsScreen extends StatelessWidget {
   const HackathonsScreen({super.key});

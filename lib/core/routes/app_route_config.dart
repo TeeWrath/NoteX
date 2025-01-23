@@ -5,6 +5,7 @@ import 'package:notex/screens/auth_screens/enter_details.dart';
 import 'package:notex/screens/auth_screens/splash.dart';
 import 'package:notex/screens/hackathons/hackathons.dart';
 import 'package:notex/screens/home/home.dart';
+import 'package:notex/screens/notes/explore_notes.dart';
 
 class AppRouteConfig {
   static GoRouter returnRouter() {
@@ -36,7 +37,14 @@ class AppRouteConfig {
         pageBuilder: (context, state) {
           return const MaterialPage(child: HackathonsScreen());
         },
-      )
+      ),
+      GoRoute(
+        name: RouteName.exploreNotes,
+        path: Routes.exploreNotes,
+        pageBuilder: (context, state) {
+          return const MaterialPage(child: ExploreNotes());
+        },
+      ),
     ]);
     return routes;
   }

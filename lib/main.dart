@@ -33,6 +33,8 @@ class MyApp extends StatelessWidget {
       designSize: const Size(844, 390),
       minTextAdapt: true,
       child: PlatformProvider(
+          settings:
+              PlatformSettingsData(matchMaterialCaseForPlatformText: true),
           builder: (context) => PlatformTheme(
                 materialDarkTheme: AppTheme.dark(),
                 cupertinoDarkTheme: AppTheme.cupDark(),
@@ -50,9 +52,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// MaterialApp.router(
-//         debugShowCheckedModeBanner: false,
-//         theme: AppTheme.dark(),
-//         routerConfig: AppRouteConfig.returnRouter(),
-//       )

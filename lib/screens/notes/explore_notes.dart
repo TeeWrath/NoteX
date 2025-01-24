@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notex/core/theme/app_theme.dart';
+import 'package:notex/core/widgets/cards/notes_card.dart';
 import 'package:notex/core/widgets/common_scaffold.dart';
 
 class ExploreNotes extends StatelessWidget {
@@ -27,6 +29,7 @@ class ExploreNotes extends StatelessWidget {
               SizedBox(
                 height: 15.h,
               ),
+              NotesCard(isActive: false)
               ],
             ),
           ),

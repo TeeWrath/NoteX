@@ -30,9 +30,9 @@ class BottomBar {
 
   final bottomBarRoutes = [
     Routes.homeScreen,
-    Routes.homeScreen,
+    Routes.exploreNotes,
     Routes.hackathons,
     Routes.homeScreen,
-    Routes.homeScreen
+    Routes.userProfile
   ];
 }

@@ -29,7 +29,7 @@ class ExploreNotes extends StatelessWidget {
               SizedBox(
                 height: 15.h,
               ),
-              NotesCard(isActive: false)
+              NotesCard(isActive: true)
               ],
             ),
           ),

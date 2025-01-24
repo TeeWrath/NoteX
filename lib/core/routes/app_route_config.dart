@@ -6,6 +6,7 @@ import 'package:notex/screens/auth_screens/splash.dart';
 import 'package:notex/screens/hackathons/hackathons.dart';
 import 'package:notex/screens/home/home.dart';
 import 'package:notex/screens/notes/explore_notes.dart';
+import 'package:notex/screens/profile/user_profile.dart';
 
 class AppRouteConfig {
   static GoRouter returnRouter() {
@@ -43,6 +44,13 @@ class AppRouteConfig {
         path: Routes.exploreNotes,
         pageBuilder: (context, state) {
           return const MaterialPage(child: ExploreNotes());
+        },
+      ),
+      GoRoute(
+        name: RouteName.userProfile,
+        path: Routes.userProfile,
+        pageBuilder: (context, state) {
+          return const MaterialPage(child: UserProfile());
         },
       ),
     ]);

@@ -3,7 +3,8 @@ class Routes {
   static const String enterDetails = '/enter-details';
   static const String homeScreen = '/home';
   static const String hackathons = '/hackathons';
-  static const String exploreNotes = '/';
+  static const String exploreNotes = '/expnotes';
+  static const String userProfile = '/';
 }
 
 class RouteName {
@@ -12,4 +13,5 @@ class RouteName {
   static const String homeScreen = 'home';
   static const String hackathons = 'hackathons';
   static const String exploreNotes = 'expnotes';
+  static const String userProfile = 'userProfile';
 }

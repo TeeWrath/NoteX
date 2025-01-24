@@ -7,8 +7,6 @@ import 'package:notex/core/theme/app_theme.dart';
 class NotesCard extends StatelessWidget {
   const NotesCard(
       {super.key,
-      // this.height,
-      // this.width,
       this.padding,
       this.margin,
       this.alignment,
@@ -17,8 +15,7 @@ class NotesCard extends StatelessWidget {
       this.authorName,
       this.semester,
       this.upVotes});
-  // final double? height;
-  // final double? width;
+
   final EdgeInsets? padding;
   final EdgeInsets? margin;
   final AlignmentGeometry? alignment;
@@ -49,9 +46,7 @@ class NotesCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
-            width: 20.w,
-          ),
+          SizedBox(width: 20.w),
           isActive
               ? Image.asset('assets/notesimg.png')
               : IconButton(
@@ -59,61 +54,68 @@ class NotesCard extends StatelessWidget {
                   icon: Icon(
                     CupertinoIcons.heart,
                     color: AppTheme.dark().colorScheme.secondary,
-                    size: 24,
+                    size: 30,
                   )),
           const Spacer(),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Flexible(
-                child: Text(
-                  subjectName ?? 'Semiconductor Devices',
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Flexible(
+                  child: Text(
+                    subjectName ?? 'Semiconductor Devices',
+                    softWrap: true,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                    textAlign: TextAlign.right,
+                    style: isActive
+                        ? AppTheme.dark().textTheme.titleSmall!.copyWith()
+                        : AppTheme.dark().textTheme.titleSmall!.copyWith(
+                            fontWeight: FontWeight.w400, color: Colors.white),
+                  ),
+                ),
+                Text(
+                  authorName ?? 'Lewis Strauss',
                   softWrap: true,
                   overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.right,
                   style: isActive
-                      ? AppTheme.dark().textTheme.titleSmall!.copyWith()
-                      : AppTheme.dark().textTheme.titleMedium!.copyWith(
-                          fontWeight: FontWeight.w400, color: Colors.white),
+                      ? AppTheme.dark()
+                          .textTheme
+                          .bodyMedium!
+                          .copyWith(fontWeight: FontWeight.w400)
+                      : AppTheme.dark().textTheme.bodyLarge!.copyWith(
+                          color: Colors.white, fontWeight: FontWeight.w200),
                 ),
-              ),
-              Text(
-                authorName ?? 'Lewis Strauss',
-                style: isActive
-                    ? AppTheme.dark()
+                if (isActive) ...[
+                  IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        CupertinoIcons.heart,
+                        color: Colors.black,
+                      )),
+                  Text(
+                    semester != null ? 'Semester $semester' : 'Semester III',
+                    softWrap: true,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTheme.dark()
                         .textTheme
-                        .bodyMedium!
-                        .copyWith(fontWeight: FontWeight.w400)
-                    : AppTheme.dark().textTheme.bodyLarge!.copyWith(
-                        color: Colors.white, fontWeight: FontWeight.w200),
-              ),
-              // SizedBox(
-              //   height: 2.h,
-              // ),
-              if (isActive) ...[
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      CupertinoIcons.heart,
-                      color: Colors.black,
-                      // size: 20,
-                    )),
-                Text(
-                  semester != null ? 'Semester $semester' : 'Semester III',
-                  style: AppTheme.dark()
-                      .textTheme
-                      .bodyLarge!
-                      .copyWith(fontWeight: FontWeight.w500),
-                ),
-                Text(
-                  upVotes != null ? '$upVotes Upvotes' : 'X Upvotes',
-                  style: AppTheme.dark()
-                      .textTheme
-                      .bodySmall!
-                      .copyWith(fontWeight: FontWeight.w300),
-                )
+                        .bodyLarge!
+                        .copyWith(fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    upVotes != null ? '$upVotes Upvotes' : 'X Upvotes',
+                    softWrap: true,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTheme.dark()
+                        .textTheme
+                        .bodySmall!
+                        .copyWith(fontWeight: FontWeight.w300),
+                  )
+                ],
               ],
-            ],
+            ),
           )
         ],
       ),

@@ -6,6 +6,7 @@ import 'package:notex/core/routes/app_route_const.dart';
 import 'package:notex/core/theme/app_theme.dart';
 import 'package:notex/core/widgets/buttons/home_button.dart';
 import 'package:notex/core/widgets/common_scaffold.dart';
+import 'package:notex/providers/bottom_bar_provider.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,7 +14,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer(
+    return Consumer<BottomBarProvider>(
       builder: (context, provider, child) {
         return CommonScaffold(
             enableAppBar: false,
@@ -37,7 +38,10 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           // SizedBox(height: 10.h,),
                           GestureDetector(
-                            onTap: (){},
+                            onTap: () {
+                              context.push(Routes.userProfile);
+                              provider.changeIndex(4);
+                            },
                             child: Align(
                                 alignment: Alignment.centerRight,
                                 child: Image.asset('assets/catpfp.png')),
@@ -62,7 +66,10 @@ class HomeScreen extends StatelessWidget {
                   HomeButton(
                     iconData: Icons.arrow_forward,
                     padding: EdgeInsets.fromLTRB(100.w, 15.h, 100.w, 15.h),
-                    onPressed: () {},
+                    onPressed: () {
+                      context.push(Routes.exploreNotes);
+                      provider.changeIndex(1);
+                    },
                     child: Text(
                       'Notes',
                       style: AppTheme.dark().textTheme.titleMedium!.copyWith(
@@ -90,6 +97,7 @@ class HomeScreen extends StatelessWidget {
                     padding: EdgeInsets.fromLTRB(100.w, 15.h, 100.w, 15.h),
                     onPressed: () {
                       context.push(Routes.hackathons);
+                      provider.changeIndex(2);
                     },
                     child: Text(
                       'Hackathons',

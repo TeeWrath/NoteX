@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:notex/core/routes/app_route_const.dart';
 import 'package:notex/core/theme/app_theme.dart';
 import 'package:notex/core/widgets/bottom_nav_bar.dart';
 import 'package:notex/core/widgets/text_fields/search_text_field.dart';
+import 'package:notex/providers/bottom_bar_provider.dart';
 import 'package:provider/provider.dart';
 
 class CommonScaffold extends StatelessWidget {
@@ -20,7 +22,7 @@ class CommonScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer(
+    return Consumer<BottomBarProvider>(
       builder: (context, provider, child) {
         return Scaffold(
           backgroundColor: AppTheme.dark().scaffoldBackgroundColor,
@@ -45,7 +47,10 @@ class CommonScaffold extends StatelessWidget {
                   centerTitle: true,
                   actions: [
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.push(Routes.userProfile);
+                        provider.changeIndex(4);
+                      },
                       icon: CircleAvatar(
                         maxRadius: 50.r,
                         foregroundImage: const AssetImage('assets/catpfp.png'),

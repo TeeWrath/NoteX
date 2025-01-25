@@ -6,6 +6,7 @@ import 'package:notex/screens/auth_screens/splash.dart';
 import 'package:notex/screens/hackathons/hackathons.dart';
 import 'package:notex/screens/home/home.dart';
 import 'package:notex/screens/notes/explore_notes.dart';
+import 'package:notex/screens/profile/update_details.dart';
 import 'package:notex/screens/profile/user_profile.dart';
 
 class AppRouteConfig {
@@ -51,6 +52,13 @@ class AppRouteConfig {
         path: Routes.userProfile,
         pageBuilder: (context, state) {
           return const MaterialPage(child: UserProfile());
+        },
+      ),
+      GoRoute(
+        name: RouteName.updateDetails,
+        path: Routes.updateDetails,
+        pageBuilder: (context, state) {
+          return const MaterialPage(child: UpdateDetails());
         },
       ),
     ]);

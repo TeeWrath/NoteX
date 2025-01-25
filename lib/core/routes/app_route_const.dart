@@ -4,7 +4,8 @@ class Routes {
   static const String homeScreen = '/home';
   static const String hackathons = '/hackathons';
   static const String exploreNotes = '/expnotes';
-  static const String userProfile = '/';
+  static const String userProfile = '/userProfile';
+  static const String updateDetails = '/';
 }
 
 class RouteName {
@@ -14,4 +15,5 @@ class RouteName {
   static const String hackathons = 'hackathons';
   static const String exploreNotes = 'expnotes';
   static const String userProfile = 'userProfile';
+  static const String updateDetails = 'updateDetails';
 }

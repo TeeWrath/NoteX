@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notex/core/theme/app_theme.dart';
 import 'package:notex/core/widgets/bordered_img.dart';
+import 'package:notex/core/widgets/buttons/icons_button.dart';
 import 'package:notex/core/widgets/common_scaffold.dart';
 
 class UserProfile extends StatelessWidget {
@@ -69,7 +70,17 @@ class UserProfile extends StatelessWidget {
                     color: AppTheme.dark().scaffoldBackgroundColor,
                     image: 'assets/catpfp.png'),
               ),
-              SizedBox(height: 10.h,),
+              IconsButton(
+                  onPressed: () {},
+                  icon: Image.asset('assets/edit_button.png'),
+                  label: 'Update Details'),
+              SizedBox(
+                height: 10.h,
+              ),
+              IconsButton(
+                  onPressed: () {},
+                  icon: Image.asset('assets/logout_button.png'),
+                  label: 'Log Out')
             ],
           ),
         ));

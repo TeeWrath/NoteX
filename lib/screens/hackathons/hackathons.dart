@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:notex/core/theme/app_theme.dart';
-import 'package:notex/core/widgets/common_scaffold.dart';
-import 'package:notex/core/widgets/cards/hackathon_card.dart';
+import "package:flutter/material.dart";
+import "package:flutter_screenutil/flutter_screenutil.dart";
+
+import "../../core/theme/app_theme.dart";
+import "../../core/widgets/cards/hackathon_card.dart";
+import "../../core/widgets/common_scaffold.dart";
 
 class HackathonsScreen extends StatelessWidget {
   const HackathonsScreen({super.key});
@@ -14,12 +15,12 @@ class HackathonsScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Center(
           child: Column(
-            children: [
+            children: <Widget>[
               SizedBox(
                 height: 8.h,
               ),
               Text(
-                'Explore Hackathons',
+                "Explore Hackathons",
                 style: AppTheme.dark()
                     .textTheme
                     .titleLarge!
@@ -29,40 +30,61 @@ class HackathonsScreen extends StatelessWidget {
                 height: 15.h,
               ),
               HackathonCard(
-                  height: 70.h,
-                  width: 700.w,
-                  padding: EdgeInsets.fromLTRB(20.w, 5.h, 20.w, 5.h),),
-                  SizedBox(height: 10.h,),
-                  HackathonCard(
-                  height: 70.h,
-                  width: 700.w,
-                  padding: EdgeInsets.fromLTRB(20.w, 5.h, 20.w, 5.h),),
-                  SizedBox(height: 10.h,),
-                  HackathonCard(
-                  height: 70.h,
-                  width: 700.w,
-                  padding: EdgeInsets.fromLTRB(20.w, 5.h, 20.w, 5.h),),
-                  SizedBox(height: 10.h,),
-                  HackathonCard(
-                  height: 70.h,
-                  width: 700.w,
-                  padding: EdgeInsets.fromLTRB(20.w, 5.h, 20.w, 5.h),),
-                  SizedBox(height: 10.h,),
-                  HackathonCard(
-                  height: 70.h,
-                  width: 700.w,
-                  padding: EdgeInsets.fromLTRB(20.w, 5.h, 20.w, 5.h),),
-                  SizedBox(height: 10.h,),
-                  HackathonCard(
-                  height: 70.h,
-                  width: 700.w,
-                  padding: EdgeInsets.fromLTRB(20.w, 5.h, 20.w, 5.h),),
-                  SizedBox(height: 10.h,),
-                  HackathonCard(
-                  height: 70.h,
-                  width: 700.w,
-                  padding: EdgeInsets.fromLTRB(20.w, 5.h, 20.w, 5.h),),
-                  SizedBox(height: 10.h,),
+                height: 70.h,
+                width: 700.w,
+                padding: EdgeInsets.fromLTRB(20.w, 5.h, 20.w, 5.h),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              HackathonCard(
+                height: 70.h,
+                width: 700.w,
+                padding: EdgeInsets.fromLTRB(20.w, 5.h, 20.w, 5.h),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              HackathonCard(
+                height: 70.h,
+                width: 700.w,
+                padding: EdgeInsets.fromLTRB(20.w, 5.h, 20.w, 5.h),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              HackathonCard(
+                height: 70.h,
+                width: 700.w,
+                padding: EdgeInsets.fromLTRB(20.w, 5.h, 20.w, 5.h),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              HackathonCard(
+                height: 70.h,
+                width: 700.w,
+                padding: EdgeInsets.fromLTRB(20.w, 5.h, 20.w, 5.h),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              HackathonCard(
+                height: 70.h,
+                width: 700.w,
+                padding: EdgeInsets.fromLTRB(20.w, 5.h, 20.w, 5.h),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              HackathonCard(
+                height: 70.h,
+                width: 700.w,
+                padding: EdgeInsets.fromLTRB(20.w, 5.h, 20.w, 5.h),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
             ],
           ),
         ),

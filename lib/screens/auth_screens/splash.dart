@@ -1,10 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
-import 'package:notex/core/routes/app_route_const.dart';
-import 'package:notex/core/theme/app_theme.dart';
-import 'package:notex/core/widgets/buttons/auth_button.dart';
+import "package:flutter/material.dart";
+import "package:flutter_platform_widgets/flutter_platform_widgets.dart";
+import "package:flutter_screenutil/flutter_screenutil.dart";
+import "package:go_router/go_router.dart";
+
+import "../../core/routes/app_route_const.dart";
+import "../../core/theme/app_theme.dart";
+import "../../core/widgets/buttons/auth_button.dart";
 
 class Splash extends StatelessWidget {
   const Splash({super.key});
@@ -17,23 +18,24 @@ class Splash extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
+          children: <Widget>[
             Image.asset(
-              'assets/logo.png',
+              "assets/logo.png",
               width: 300.w,
             ),
             PlatformText(
-              'Notex',
+              "Notex",
               style: AppTheme.dark().textTheme.titleLarge!.copyWith(
-                  color: Colors.black,
-                  fontSize: 130.sp,
-                  fontWeight: FontWeight.w800),
+                    color: Colors.black,
+                    fontSize: 130.sp,
+                    fontWeight: FontWeight.w800,
+                  ),
             ),
             SizedBox(
               height: 10.h,
             ),
             PlatformText(
-              'Share notes, connect with people, crack university examinations',
+              "Share notes, connect with people, crack university examinations",
               textAlign: TextAlign.center,
               style: AppTheme.dark()
                   .textTheme
@@ -44,16 +46,17 @@ class Splash extends StatelessWidget {
               height: 6.h,
             ),
             AuthButton(
-                onPressed: () {
-                  context.go(Routes.enterDetails);
-                },
-                child: Text(
-                  'Shall We?',
-                  style: AppTheme.dark()
-                      .textTheme
-                      .titleMedium!
-                      .copyWith(color: Colors.white, fontWeight: FontWeight.w500),
-                ))
+              onPressed: () {
+                context.go(Routes.enterDetails);
+              },
+              child: Text(
+                "Shall We?",
+                style: AppTheme.dark()
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(color: Colors.white, fontWeight: FontWeight.w500),
+              ),
+            ),
           ],
         ),
       ),

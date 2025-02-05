@@ -1,12 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:notex/core/theme/app_theme.dart';
+import "package:flutter/material.dart";
+import "package:flutter_screenutil/flutter_screenutil.dart";
+
+import "../../theme/app_theme.dart";
 
 class HomeButton extends StatelessWidget {
   const HomeButton({
     super.key,
     this.onPressed,
-    this.child = const Text('Something'),
+    this.child = const Text("Something"),
     this.padding,
     this.alignment,
     this.widgetKey,
@@ -47,7 +48,7 @@ class HomeButton extends StatelessWidget {
       onPressed: onPressed,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
+        children: <Widget>[
           child,
           if (iconData != null)
             Icon(

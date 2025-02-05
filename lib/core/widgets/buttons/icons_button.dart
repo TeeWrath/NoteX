@@ -1,12 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:notex/core/theme/app_theme.dart';
+import "package:flutter/material.dart";
+import "package:flutter_screenutil/flutter_screenutil.dart";
+
+import "../../theme/app_theme.dart";
 
 class IconsButton extends StatelessWidget {
   const IconsButton({
-    super.key,
     required this.onPressed,
     required this.label,
+    super.key,
     this.icon,
     this.iconSize,
     this.alignment,
@@ -47,10 +48,11 @@ class IconsButton extends StatelessWidget {
       ),
       child: Row(
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
+        children: <Widget>[
           if (icon != null)
             SizedBox(
-              height: iconSize ?? 25.h, // Icon size proportional to button height
+              height:
+                  iconSize ?? 25.h, // Icon size proportional to button height
               width: iconSize ?? 25.h, // Ensure square aspect ratio
               child: Align(
                 alignment: Alignment.centerLeft,
@@ -66,10 +68,7 @@ class IconsButton extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Text(
                 label,
-                style: AppTheme.dark()
-                    .textTheme
-                    .bodyLarge!
-                    .copyWith(
+                style: AppTheme.dark().textTheme.bodyLarge!.copyWith(
                       fontSize: 15.5,
                       color: Colors.black,
                       fontWeight: FontWeight.w600,

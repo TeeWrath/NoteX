@@ -1,15 +1,16 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
-import 'package:notex/core/routes/app_route_const.dart';
-import 'package:notex/core/theme/app_theme.dart';
-import 'package:notex/core/theme/colors.dart';
-import 'package:notex/core/widgets/buttons/auth_button.dart';
-import 'package:notex/core/widgets/text_fields/common_text_form_field.dart';
-import 'package:notex/core/widgets/buttons/dropdownbutton.dart';
-import 'package:notex/providers/auth_provider.dart';
-import 'package:provider/provider.dart';
+import "package:flutter/material.dart";
+import "package:flutter_platform_widgets/flutter_platform_widgets.dart";
+import "package:flutter_screenutil/flutter_screenutil.dart";
+import "package:go_router/go_router.dart";
+import "package:provider/provider.dart";
+
+import "../../core/routes/app_route_const.dart";
+import "../../core/theme/app_theme.dart";
+import "../../core/theme/colors.dart";
+import "../../core/widgets/buttons/auth_button.dart";
+import "../../core/widgets/buttons/dropdownbutton.dart";
+import "../../core/widgets/text_fields/common_text_form_field.dart";
+import "../../providers/auth_provider.dart";
 
 class EnterDetails extends StatelessWidget {
   const EnterDetails({super.key});
@@ -17,15 +18,16 @@ class EnterDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<AuthProvider>(
-      builder: (context, provider, child) => Scaffold(
+      builder: (BuildContext context, AuthProvider provider, Widget? child) =>
+          Scaffold(
         backgroundColor: AppTheme.dark().colorScheme.secondary,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
+            children: <Widget>[
               Image.asset(
-                'assets/logo.png',
+                "assets/logo.png",
                 width: 200.w,
               ),
               SizedBox(
@@ -36,10 +38,12 @@ class EnterDetails extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: PlatformText(
-                    'Name',
+                    "Name",
                     textAlign: TextAlign.start,
                     style: AppTheme.dark().textTheme.titleMedium!.copyWith(
-                        fontWeight: FontWeight.w600, color: Colors.black),
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                        ),
                   ),
                 ),
               ),
@@ -47,17 +51,18 @@ class EnterDetails extends StatelessWidget {
               //   height: 2.h,
               // ),
               CommonTextFormField(
-                  width: 660.w,
-                  height: 25.h,
-                  boxDecPadding: EdgeInsets.fromLTRB(50.w, 0, 0, 0),
-                  textAlign: TextAlign.left,
-                  textAlignVertical: TextAlignVertical.center,
-                  controller: provider.nameEditingController,
-                  style: AppTheme.dark()
-                      .textTheme
-                      .titleSmall!
-                      .copyWith(color: Colors.white),
-                  hintText: 'Enter your name'),
+                width: 660.w,
+                height: 25.h,
+                boxDecPadding: EdgeInsets.fromLTRB(50.w, 0, 0, 0),
+                textAlign: TextAlign.left,
+                textAlignVertical: TextAlignVertical.center,
+                controller: provider.nameEditingController,
+                style: AppTheme.dark()
+                    .textTheme
+                    .titleSmall!
+                    .copyWith(color: Colors.white),
+                hintText: "Enter your name",
+              ),
               SizedBox(
                 height: 10.h,
               ),
@@ -66,10 +71,12 @@ class EnterDetails extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: PlatformText(
-                    'Branch',
+                    "Branch",
                     textAlign: TextAlign.start,
                     style: AppTheme.dark().textTheme.titleMedium!.copyWith(
-                        fontWeight: FontWeight.w600, color: Colors.black),
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                        ),
                   ),
                 ),
               ),
@@ -86,7 +93,7 @@ class EnterDetails extends StatelessWidget {
                 margin: EdgeInsets.fromLTRB(90.w, 0, 90.w, 0),
                 padding: EdgeInsets.fromLTRB(50.w, 1.h, 10.w, 1.h),
                 hintWidget: Text(
-                  'Choose your branch',
+                  "Choose your branch",
                   style: AppTheme.dark()
                       .textTheme
                       .titleSmall!
@@ -96,8 +103,8 @@ class EnterDetails extends StatelessWidget {
                     .textTheme
                     .bodyLarge!
                     .copyWith(color: Colors.white),
-                items: [
-                  DropdownMenuItem(
+                items: <DropdownMenuItem<Object>>[
+                  DropdownMenuItem<Object>(
                     value: "cse",
                     child: Text(
                       "Computer Science",
@@ -107,13 +114,15 @@ class EnterDetails extends StatelessWidget {
                           .copyWith(color: dropDownMenuText),
                     ),
                   ),
-                  DropdownMenuItem(
+                  DropdownMenuItem<Object>(
                     value: "ece",
-                    child: Text("Electronics and Communications",
-                        style: AppTheme.dark()
-                            .textTheme
-                            .titleSmall!
-                            .copyWith(color: dropDownMenuText)),
+                    child: Text(
+                      "Electronics and Communications",
+                      style: AppTheme.dark()
+                          .textTheme
+                          .titleSmall!
+                          .copyWith(color: dropDownMenuText),
+                    ),
                   ),
                 ],
               ),
@@ -125,10 +134,12 @@ class EnterDetails extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: PlatformText(
-                    'Semester',
+                    "Semester",
                     textAlign: TextAlign.start,
                     style: AppTheme.dark().textTheme.titleMedium!.copyWith(
-                        fontWeight: FontWeight.w600, color: Colors.black),
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                        ),
                   ),
                 ),
               ),
@@ -145,7 +156,7 @@ class EnterDetails extends StatelessWidget {
                 margin: EdgeInsets.fromLTRB(90.w, 0, 90.w, 0),
                 padding: EdgeInsets.fromLTRB(50.w, 1.h, 10.w, 1.h),
                 hintWidget: Text(
-                  'Choose your semester',
+                  "Choose your semester",
                   style: AppTheme.dark()
                       .textTheme
                       .titleSmall!
@@ -155,8 +166,8 @@ class EnterDetails extends StatelessWidget {
                     .textTheme
                     .bodyLarge!
                     .copyWith(color: Colors.white),
-                items: [
-                  DropdownMenuItem(
+                items: <DropdownMenuItem<Object>>[
+                  DropdownMenuItem<Object>(
                     value: "1",
                     child: Text(
                       "First Semester",
@@ -166,61 +177,75 @@ class EnterDetails extends StatelessWidget {
                           .copyWith(color: dropDownMenuText),
                     ),
                   ),
-                  DropdownMenuItem(
+                  DropdownMenuItem<Object>(
                     value: "2",
-                    child: Text("First Semester",
-                        style: AppTheme.dark()
-                            .textTheme
-                            .titleSmall!
-                            .copyWith(color: dropDownMenuText)),
+                    child: Text(
+                      "First Semester",
+                      style: AppTheme.dark()
+                          .textTheme
+                          .titleSmall!
+                          .copyWith(color: dropDownMenuText),
+                    ),
                   ),
-                  DropdownMenuItem(
+                  DropdownMenuItem<Object>(
                     value: "3",
-                    child: Text("Third Semester",
-                        style: AppTheme.dark()
-                            .textTheme
-                            .titleSmall!
-                            .copyWith(color: dropDownMenuText)),
+                    child: Text(
+                      "Third Semester",
+                      style: AppTheme.dark()
+                          .textTheme
+                          .titleSmall!
+                          .copyWith(color: dropDownMenuText),
+                    ),
                   ),
-                  DropdownMenuItem(
+                  DropdownMenuItem<Object>(
                     value: "4",
-                    child: Text("Fourth Semester",
-                        style: AppTheme.dark()
-                            .textTheme
-                            .titleSmall!
-                            .copyWith(color: dropDownMenuText)),
+                    child: Text(
+                      "Fourth Semester",
+                      style: AppTheme.dark()
+                          .textTheme
+                          .titleSmall!
+                          .copyWith(color: dropDownMenuText),
+                    ),
                   ),
-                  DropdownMenuItem(
+                  DropdownMenuItem<Object>(
                     value: "5",
-                    child: Text("Fifth Semester",
-                        style: AppTheme.dark()
-                            .textTheme
-                            .titleSmall!
-                            .copyWith(color: dropDownMenuText)),
+                    child: Text(
+                      "Fifth Semester",
+                      style: AppTheme.dark()
+                          .textTheme
+                          .titleSmall!
+                          .copyWith(color: dropDownMenuText),
+                    ),
                   ),
-                  DropdownMenuItem(
+                  DropdownMenuItem<Object>(
                     value: "6",
-                    child: Text("Sixth Semester",
-                        style: AppTheme.dark()
-                            .textTheme
-                            .titleSmall!
-                            .copyWith(color: dropDownMenuText)),
+                    child: Text(
+                      "Sixth Semester",
+                      style: AppTheme.dark()
+                          .textTheme
+                          .titleSmall!
+                          .copyWith(color: dropDownMenuText),
+                    ),
                   ),
-                  DropdownMenuItem(
+                  DropdownMenuItem<Object>(
                     value: "7",
-                    child: Text("Seventh Semester",
-                        style: AppTheme.dark()
-                            .textTheme
-                            .titleSmall!
-                            .copyWith(color: dropDownMenuText)),
+                    child: Text(
+                      "Seventh Semester",
+                      style: AppTheme.dark()
+                          .textTheme
+                          .titleSmall!
+                          .copyWith(color: dropDownMenuText),
+                    ),
                   ),
-                  DropdownMenuItem(
+                  DropdownMenuItem<Object>(
                     value: "8",
-                    child: Text("Eighth Semester",
-                        style: AppTheme.dark()
-                            .textTheme
-                            .titleSmall!
-                            .copyWith(color: dropDownMenuText)),
+                    child: Text(
+                      "Eighth Semester",
+                      style: AppTheme.dark()
+                          .textTheme
+                          .titleSmall!
+                          .copyWith(color: dropDownMenuText),
+                    ),
                   ),
                 ],
               ),
@@ -228,13 +253,17 @@ class EnterDetails extends StatelessWidget {
                 height: 20.h,
               ),
               AuthButton(
-                  child: Text(
-                    'Take the leap!',
-                    style: AppTheme.dark().textTheme.titleMedium!.copyWith(color: Colors.white),
-                  ),
-                  onPressed: () {
-                    context.go(Routes.homeScreen);
-                  })
+                child: Text(
+                  "Take the leap!",
+                  style: AppTheme.dark()
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(color: Colors.white),
+                ),
+                onPressed: () {
+                  context.go(Routes.homeScreen);
+                },
+              ),
             ],
           ),
         ),

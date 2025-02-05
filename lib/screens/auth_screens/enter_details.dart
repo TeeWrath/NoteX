@@ -229,8 +229,8 @@ class EnterDetails extends StatelessWidget {
               ),
               AuthButton(
                   child: Text(
-                    'Take the leap!!',
-                    style: AppTheme.dark().textTheme.titleMedium!.copyWith(),
+                    'Take the leap!',
+                    style: AppTheme.dark().textTheme.titleMedium!.copyWith(color: Colors.white),
                   ),
                   onPressed: () {
                     context.go(Routes.homeScreen);

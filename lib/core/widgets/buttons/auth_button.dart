@@ -11,9 +11,11 @@ class AuthButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return PlatformElevatedButton(
       onPressed: onPressed,
-      color: Colors.black,
+      // color: Colors.red,
       material: (context, platform) => MaterialElevatedButtonData(
           style: ElevatedButton.styleFrom(
+            // foregroundColor: Colors.black,
+            backgroundColor: Colors.black,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(80.r)),
               fixedSize: Size(600.w, 30.h))),

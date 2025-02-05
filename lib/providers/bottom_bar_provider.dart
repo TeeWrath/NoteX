@@ -1,4 +1,4 @@
-import 'package:notex/core/utils/state_handler.dart';
+import "../core/utils/state_handler.dart";
 
 class BottomBarProvider extends StateHandler {
   BottomBarProvider() : super();

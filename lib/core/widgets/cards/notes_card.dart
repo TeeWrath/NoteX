@@ -1,20 +1,21 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:notex/core/theme/app_theme.dart';
+import "package:flutter/cupertino.dart";
+import "package:flutter/material.dart";
+import "package:flutter_screenutil/flutter_screenutil.dart";
+
+import "../../theme/app_theme.dart";
 
 class NotesCard extends StatelessWidget {
-  const NotesCard(
-      {super.key,
-      this.padding,
-      this.margin,
-      this.alignment,
-      required this.isActive,
-      this.subjectName,
-      this.authorName,
-      this.semester,
-      this.upVotes});
+  const NotesCard({
+    required this.isActive,
+    super.key,
+    this.padding,
+    this.margin,
+    this.alignment,
+    this.subjectName,
+    this.authorName,
+    this.semester,
+    this.upVotes,
+  });
 
   final EdgeInsets? padding;
   final EdgeInsets? margin;
@@ -29,14 +30,16 @@ class NotesCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(175.r),
-              topRight: Radius.circular(50.r),
-              bottomLeft: Radius.circular(50.r),
-              bottomRight: Radius.circular(50.r)),
-          color: isActive
-              ? AppTheme.dark().colorScheme.secondary
-              : AppTheme.dark().primaryColor),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(175.r),
+          topRight: Radius.circular(50.r),
+          bottomLeft: Radius.circular(50.r),
+          bottomRight: Radius.circular(50.r),
+        ),
+        color: isActive
+            ? AppTheme.dark().colorScheme.secondary
+            : AppTheme.dark().primaryColor,
+      ),
       height: isActive ? 75.h : 50.h,
       width: 0.86.sw,
       padding: padding ?? EdgeInsets.fromLTRB(50.w, 6.h, 50.w, 6.h),
@@ -45,26 +48,27 @@ class NotesCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
+        children: <Widget>[
           SizedBox(width: 20.w),
           isActive
-              ? Image.asset('assets/notesimg.png')
+              ? Image.asset("assets/notesimg.png")
               : IconButton(
                   onPressed: () {},
                   icon: Icon(
                     CupertinoIcons.heart,
                     color: AppTheme.dark().colorScheme.secondary,
                     size: 30,
-                  )),
+                  ),
+                ),
           const Spacer(),
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
+              children: <Widget>[
                 Flexible(
                   child: Text(
-                    subjectName ?? 'Semiconductor Devices',
+                    subjectName ?? "Semiconductor Devices",
                     softWrap: true,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
@@ -72,11 +76,13 @@ class NotesCard extends StatelessWidget {
                     style: isActive
                         ? AppTheme.dark().textTheme.titleSmall!.copyWith()
                         : AppTheme.dark().textTheme.titleSmall!.copyWith(
-                            fontWeight: FontWeight.w400, color: Colors.white),
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white,
+                            ),
                   ),
                 ),
                 Text(
-                  authorName ?? 'Lewis Strauss',
+                  authorName ?? "Lewis Strauss",
                   softWrap: true,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.right,
@@ -86,17 +92,20 @@ class NotesCard extends StatelessWidget {
                           .bodyMedium!
                           .copyWith(fontWeight: FontWeight.w400)
                       : AppTheme.dark().textTheme.bodyLarge!.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.w200),
+                            color: Colors.white,
+                            fontWeight: FontWeight.w200,
+                          ),
                 ),
-                if (isActive) ...[
+                if (isActive) ...<Widget>[
                   IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        CupertinoIcons.heart,
-                        color: Colors.black,
-                      )),
+                    onPressed: () {},
+                    icon: const Icon(
+                      CupertinoIcons.heart,
+                      color: Colors.black,
+                    ),
+                  ),
                   Text(
-                    semester != null ? 'Semester $semester' : 'Semester III',
+                    semester != null ? "Semester $semester" : "Semester III",
                     softWrap: true,
                     overflow: TextOverflow.ellipsis,
                     style: AppTheme.dark()
@@ -105,18 +114,18 @@ class NotesCard extends StatelessWidget {
                         .copyWith(fontWeight: FontWeight.w500),
                   ),
                   Text(
-                    upVotes != null ? '$upVotes Upvotes' : 'X Upvotes',
+                    upVotes != null ? "$upVotes Upvotes" : "X Upvotes",
                     softWrap: true,
                     overflow: TextOverflow.ellipsis,
                     style: AppTheme.dark()
                         .textTheme
                         .bodySmall!
                         .copyWith(fontWeight: FontWeight.w300),
-                  )
+                  ),
                 ],
               ],
             ),
-          )
+          ),
         ],
       ),
     );

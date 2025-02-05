@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:google_fonts/google_fonts.dart';
+import "package:flutter/cupertino.dart";
+import "package:flutter/material.dart";
+import "package:google_fonts/google_fonts.dart";
 
 class AppTheme {
   // Dark Mode - Android
@@ -15,8 +14,9 @@ class AppTheme {
 
   static ThemeData dark() {
     return ThemeData(
-            useMaterial3: false, fontFamily: GoogleFonts.manrope().fontFamily)
-        .copyWith(
+      useMaterial3: false,
+      fontFamily: GoogleFonts.manrope().fontFamily,
+    ).copyWith(
       scaffoldBackgroundColor: _scaffoldColorDark,
       primaryColorDark: _primaryColorDark,
       primaryColor: _primaryColorDark,
@@ -28,9 +28,10 @@ class AppTheme {
       // Allow developers flexibility in text theme colors and font weights to suit specific UI details.
       textTheme: const TextTheme(
         titleLarge: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.w500,
-            color: _secondaryColorDark),
+          fontSize: 30,
+          fontWeight: FontWeight.w500,
+          color: _secondaryColorDark,
+        ),
         titleMedium: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
         titleSmall: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
         bodyLarge: TextStyle(fontSize: 14),
@@ -43,10 +44,11 @@ class AppTheme {
   // Dark Mode - IOS and MacOs
   static CupertinoThemeData cupDark() {
     return CupertinoThemeData(
-        primaryColor: _primaryColorDark,
-        applyThemeToAll: true,
-        scaffoldBackgroundColor: _scaffoldColorDark,
-        primaryContrastingColor: _secondaryColorDark,
-        textTheme: CupertinoTextThemeData(textStyle: GoogleFonts.roboto()));
+      primaryColor: _primaryColorDark,
+      applyThemeToAll: true,
+      scaffoldBackgroundColor: _scaffoldColorDark,
+      primaryContrastingColor: _secondaryColorDark,
+      textTheme: CupertinoTextThemeData(textStyle: GoogleFonts.roboto()),
+    );
   }
 }

@@ -1,11 +1,15 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:notex/core/theme/app_theme.dart';
-import 'package:notex/core/theme/colors.dart';
+import "package:flutter/material.dart";
+import "package:flutter_screenutil/flutter_screenutil.dart";
+
+import "../../theme/app_theme.dart";
+import "../../theme/colors.dart";
 
 class SearchTextField extends StatelessWidget {
-  const SearchTextField(
-      {super.key, required this.hintText, required this.suffixWidget});
+  const SearchTextField({
+    required this.hintText,
+    required this.suffixWidget,
+    super.key,
+  });
   final Widget suffixWidget;
   final String hintText;
 
@@ -13,8 +17,9 @@ class SearchTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: AppTheme.dark().primaryColor,
-          borderRadius: BorderRadius.circular(50.r)),
+        color: AppTheme.dark().primaryColor,
+        borderRadius: BorderRadius.circular(50.r),
+      ),
       child: TextField(
         textAlignVertical: TextAlignVertical.center,
         style: AppTheme.dark()

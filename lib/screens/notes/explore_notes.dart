@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:notex/core/theme/app_theme.dart';
-import 'package:notex/core/widgets/cards/notes_card.dart';
-import 'package:notex/core/widgets/common_scaffold.dart';
+import "package:flutter/material.dart";
+import "package:flutter_screenutil/flutter_screenutil.dart";
+
+import "../../core/theme/app_theme.dart";
+import "../../core/widgets/cards/notes_card.dart";
+import "../../core/widgets/common_scaffold.dart";
 
 class ExploreNotes extends StatelessWidget {
   const ExploreNotes({super.key});
@@ -11,16 +11,18 @@ class ExploreNotes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CommonScaffold(
-        enableAppBar: true,
-        suffixIcon: Icons.keyboard_arrow_down_rounded,
-        searchHintText: 'Search your notes',
-        body: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              children: [
-                SizedBox(height: 8.h,),
-                Text(
-                'Explore Notes',
+      enableAppBar: true,
+      suffixIcon: Icons.keyboard_arrow_down_rounded,
+      searchHintText: "Search your notes",
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              SizedBox(
+                height: 8.h,
+              ),
+              Text(
+                "Explore Notes",
                 style: AppTheme.dark()
                     .textTheme
                     .titleLarge!
@@ -29,10 +31,11 @@ class ExploreNotes extends StatelessWidget {
               SizedBox(
                 height: 15.h,
               ),
-              NotesCard(isActive: true)
-              ],
-            ),
+              const NotesCard(isActive: true),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

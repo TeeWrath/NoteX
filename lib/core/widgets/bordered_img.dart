@@ -1,13 +1,14 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
 class BorderedImg extends StatelessWidget {
-  const BorderedImg(
-      {super.key,
-      this.height,
-      this.width,
-      required this.color,
-      this.strokeWidth,
-      required this.image});
+  const BorderedImg({
+    required this.color,
+    required this.image,
+    super.key,
+    this.height,
+    this.width,
+    this.strokeWidth,
+  });
   final double? height;
   final double? width;
   final Color color;

@@ -1,19 +1,20 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:notex/core/theme/app_theme.dart';
-import 'package:notex/core/theme/colors.dart';
+import "package:flutter/material.dart";
+import "package:flutter_screenutil/flutter_screenutil.dart";
+
+import "../../theme/app_theme.dart";
 
 class DropDownbutton extends StatelessWidget {
-  const DropDownbutton(
-      {super.key,
-      this.hintWidget,
-      this.style,
-      this.isExpanded = false,
-      this.padding,
-      this.margin,
-      this.menuWidth,
-      this.icon,
-      this.items});
+  const DropDownbutton({
+    super.key,
+    this.hintWidget,
+    this.style,
+    this.isExpanded = false,
+    this.padding,
+    this.margin,
+    this.menuWidth,
+    this.icon,
+    this.items,
+  });
 
   final Widget? hintWidget;
   final TextStyle? style;
@@ -34,7 +35,7 @@ class DropDownbutton extends StatelessWidget {
         borderRadius: BorderRadius.circular(90.r),
       ),
       child: DropdownButtonHideUnderline(
-        child: DropdownButton(
+        child: DropdownButton<Object>(
           hint: hintWidget,
           isExpanded: isExpanded,
           focusColor: AppTheme.dark().primaryColor,
@@ -49,7 +50,7 @@ class DropDownbutton extends StatelessWidget {
           // alignment: Alignment.center,
           menuWidth: menuWidth,
           icon: icon,
-          onChanged: (value) {
+          onChanged: (Object? value) {
             // Handle value change
           },
         ),

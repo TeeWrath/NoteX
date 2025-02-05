@@ -1,12 +1,12 @@
-import 'dart:io';
+import "dart:io";
 
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
 enum ProviderState { inital, empty, loading, loaded, success, error }
 
 class StateHandler extends ChangeNotifier {
   ProviderState state = ProviderState.inital;
-  Failure errorMessage = Failure('');
+  Failure errorMessage = Failure("");
 
   StateHandler([ProviderState? intialState])
       : state = intialState ?? ProviderState.inital;
@@ -45,13 +45,13 @@ class StateHandler extends ChangeNotifier {
   ///For handling errors
   Future<T?> asyncHandler<T>(
     Future<dynamic> task, {
-    String socketError = 'No Internet Connection',
-    String formatError = 'Format Exception while parsing data',
-    String unknownError = 'Something went Wrong',
+    String socketError = "No Internet Connection",
+    String formatError = "Format Exception while parsing data",
+    String unknownError = "Something went Wrong",
     ProviderState? afterState,
   }) async {
     try {
-      final temp = await task as T;
+      final T temp = await task as T;
 
       if (afterState != null) {
         state = afterState;
@@ -60,15 +60,15 @@ class StateHandler extends ChangeNotifier {
 
       return temp;
     } on SocketException catch (e) {
-      debugPrint('SocketException: $e');
+      debugPrint("SocketException: $e");
 
       handleError(socketError);
     } on FormatException catch (e) {
-      debugPrint('FormatException : $e');
+      debugPrint("FormatException : $e");
 
       handleError(formatError);
     } catch (e) {
-      debugPrint('Unknown Error: $e');
+      debugPrint("Unknown Error: $e");
 
       handleError(unknownError);
     }
@@ -84,7 +84,7 @@ class Failure {
   Failure(this.message, [this.code]);
 
   void clear() {
-    message = '';
-    code = '';
+    message = "";
+    code = "";
   }
 }
